@@ -1,17 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { bootstrapMicroFrontend } from 'cb-react-micro-frontend';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { unregister } from './serviceWorker';
+import { name } from '../package.json';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+bootstrapMicroFrontend(name, App, unregister);
