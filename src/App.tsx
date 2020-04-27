@@ -1,4 +1,4 @@
-import React, { FC, memo, Suspense, lazy } from 'react';
+import React, { FC, memo, Suspense, lazy, Fragment } from 'react';
 import { History } from 'history';
 import { Router, Route } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -18,6 +18,14 @@ const routes = createRoutes({
     path: '/about',
     factory: () => import('containers/About'),
   },
+  Login: {
+    path: '/login',
+    factory: () => import('containers/Login'),
+  },
+  Products: {
+    path: '/products',
+    factory: () => import('containers/ProductList'),
+  },
 });
 
 export const joinUrlPaths = (...paths: string[]) =>
@@ -35,14 +43,12 @@ export const AppComponent: FC<MicroFrontendAppProps> = ({
     <>
       <div>Micro-Frontend 1</div>
       <nav>
-        {Object.entries(routes).map(([name, { path }]) => {
-          console.log(`/${joinUrlPaths(microFrontendPath, path)}`);
-          return (
-            <Link key={name} to={`/${joinUrlPaths(microFrontendPath, path)}`}>
-              {name}
-            </Link>
-          );
-        })}
+        {Object.entries(routes).map(([name, { path }]) => (
+          <Fragment key={name}>
+            <Link to={`/${joinUrlPaths(microFrontendPath, path)}`}>{name}</Link>{' '}
+            |{' '}
+          </Fragment>
+        ))}
       </nav>
       <Suspense fallback="Loading Child">
         {Object.entries(routes).map(([name, { factory, path, ...props }]) => (
