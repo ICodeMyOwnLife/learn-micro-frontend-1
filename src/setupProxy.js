@@ -4,6 +4,6 @@ module.exports = app => {
       `remote: ${req.connection.remoteAddress}:${req.connection.remotePort} - originalUrl: ${req.originalUrl}`,
     );
     res.header('Access-Control-Allow-Origin', '*');
-    setTimeout(next, 2000);
+    setTimeout(next, 500);
   });
 };

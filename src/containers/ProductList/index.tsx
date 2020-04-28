@@ -1,12 +1,13 @@
 import React, { FC, memo } from 'react';
 import { useProductList } from './utils';
+import './styles.scss';
 
 export const ProductListsComponent: FC = () => {
   const { handleGetIds, ids } = useProductList();
   return (
-    <div>
-      <div>
-        <button onClick={handleGetIds} type="button">
+    <div className="productList">
+      <div className="topGroup">
+        <button className="button" onClick={handleGetIds} type="button">
           Get Ids
         </button>
       </div>

@@ -1,0 +1,18 @@
+.productList {
+  width: 480px;
+  margin: 32px auto 0;
+
+  .topGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    padding: 10px 32px;
+    font-size: 16px;
+    color: white;
+    background-color: chocolate;
+    border: none;
+  }
+}

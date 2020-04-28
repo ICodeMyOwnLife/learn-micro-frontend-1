@@ -1,22 +1,40 @@
 import React, { FC, memo } from 'react';
+import clsx from 'clsx';
 import { useLoginForm } from './utils';
+import classes from './styles.module.scss';
 
 export const LoginComponent: FC = () => {
   const { handleFormSubmit, register, token } = useLoginForm();
 
   return (
-    <div>
+    <div className={classes.root}>
       <form onSubmit={handleFormSubmit}>
-        <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" name="username" ref={register} />
+        <div className={classes.formGroup}>
+          <label className={classes.inputLabel} htmlFor="username">
+            Username
+          </label>
+          <input
+            className={classes.inputControl}
+            type="text"
+            name="username"
+            ref={register}
+          />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" ref={register} />
+        <div className={classes.formGroup}>
+          <label className={classes.inputLabel} htmlFor="password">
+            Password
+          </label>
+          <input
+            className={classes.inputControl}
+            type="password"
+            name="password"
+            ref={register}
+          />
         </div>
-        <div>
-          <button type="submit">Submit</button>
+        <div className={clsx(classes.formGroup, classes.actionGroup)}>
+          <button className={classes.button} type="submit">
+            Submit
+          </button>
         </div>
       </form>
 

@@ -1,0 +1,33 @@
+.root {
+  width: 520px;
+  margin: 32px auto 0;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.actionGroup {
+  justify-content: flex-end;
+}
+
+.inputLabel {
+  width: 92px;
+  font-weight: bold;
+}
+
+.inputControl {
+  flex: 1;
+  padding: 8px 16px;
+}
+
+.button {
+  padding: 10px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: blueviolet;
+  border: none;
+}
