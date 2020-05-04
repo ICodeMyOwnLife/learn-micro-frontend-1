@@ -1,0 +1,11 @@
+This release contains a few other notable improvements:
+
+In Strict Development Mode, React calls lifecycle methods twice to flush out any possible unwanted side effects. This release adds that behaviour to shouldComponentUpdate. This shouldn’t affect most code, unless you have side effects in shouldComponentUpdate. To fix this, move the code with side effects into componentDidUpdate.
+
+In Strict Development Mode, the warnings for usage of the legacy context API didn’t include the stack for the component that triggered the warning. This release adds the missing stack to the warning.
+
+onMouseEnter now doesn’t trigger on disabled <button> elements.
+
+ReactDOM was missing a version export since we published v16. This release adds it back. We don’t recommend using it in your application logic, but it’s useful when debugging issues with mismatching / multiple versions of ReactDOM on the same page.
+
+We’re thankful to all the contributors who helped surface and fix these and other issues. You can find the full changelog below.

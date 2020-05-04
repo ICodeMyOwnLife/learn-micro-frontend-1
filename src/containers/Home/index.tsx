@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router';
 
 export const HomeComponent: FC<RouteComponentProps> = ({ location }) => (
   <div>
-    <h2>Home 1</h2>
+    <h2>Home {process.env.REACT_APP_MF_CODE}</h2>
     <p>{location.pathname}</p>
   </div>
 );

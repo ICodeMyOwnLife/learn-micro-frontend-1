@@ -1,16 +1,9 @@
-import { History } from 'history';
+declare module '*.mp4' {
+  declare const src: string;
+  export default src;
+}
 
-declare global {
-  interface Window {
-    render: { [microFrontendName: string]: RenderMicroFrontend };
-    unmount: { [microFrontendName: string]: UnmountMicroFrontend };
-  }
-
-  interface RenderMicroFrontend {
-    (containerId: string, history: History): void;
-  }
-
-  interface UnmountMicroFrontend {
-    (containerId: string): void;
-  }
+declare module '*.txt' {
+  declare const src: string;
+  export default src;
 }

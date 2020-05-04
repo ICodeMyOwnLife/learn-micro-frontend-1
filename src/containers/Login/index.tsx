@@ -8,6 +8,7 @@ export const LoginComponent: FC = () => {
 
   return (
     <div className={classes.root}>
+      <h3>LOGIN {process.env.REACT_APP_MF_CODE}</h3>
       <form onSubmit={handleFormSubmit}>
         <div className={classes.formGroup}>
           <label className={classes.inputLabel} htmlFor="username">

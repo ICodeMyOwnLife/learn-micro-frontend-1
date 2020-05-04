@@ -1,75 +1,67 @@
-import React, { FC, memo, Suspense, lazy, Fragment } from 'react';
+import React, { FC, memo, Suspense, lazy } from 'react';
 import { History } from 'history';
 import { Router, Route } from 'react-router';
-import { Link } from 'react-router-dom';
 import { MicroFrontendAppProps } from 'cb-react-micro-frontend';
-import { createRoutes } from 'utils/routing';
+import Header from 'components/Header';
+import {
+  ThemeProvider,
+  CssBaseline,
+  Typography,
+  StylesProvider,
+} from '@material-ui/core';
+import theme from 'theme';
+import AppLayout from 'components/AppLayout';
+import Sidebar from 'components/Sidebar';
+import routes from 'routes';
+import { joinUrlPaths } from 'utils/routing';
+import jssInstance, { generateClassName } from 'jssInstance';
+import useStyles from './styles';
 
-const routes = createRoutes({
-  Home: {
-    path: '/home',
-    factory: () => import('containers/Home'),
-  },
-  Contact: {
-    path: '/contact',
-    factory: () => import('containers/Contact'),
-  },
-  About: {
-    path: '/about',
-    factory: () => import('containers/About'),
-  },
-  Login: {
-    path: '/login',
-    factory: () => import('containers/Login'),
-  },
-  Products: {
-    path: '/products',
-    factory: () => import('containers/ProductList'),
-  },
-});
-
-export const joinUrlPaths = (...paths: string[]) =>
-  paths
-    .map(path => path.match(/\/?(.+[^/])\/?/)?.[1] ?? '')
-    .filter(Boolean)
-    .join('/');
+console.log(theme);
 
 export const AppComponent: FC<MicroFrontendAppProps> = ({
   history,
   isMicroFrontend,
   microFrontendPath,
 }) => {
+  const classes = useStyles();
+
   const content = (
-    <>
-      <div>Micro-Frontend 1</div>
-      <nav>
-        {Object.entries(routes).map(([name, { path }]) => (
-          <Fragment key={name}>
-            <Link to={`/${joinUrlPaths(microFrontendPath, path)}`}>{name}</Link>{' '}
-            |{' '}
-          </Fragment>
-        ))}
-      </nav>
-      <Suspense fallback="Loading Child">
-        {Object.entries(routes).map(([name, { factory, path, ...props }]) => (
-          <Route
-            {...props}
-            component={lazy(factory)}
-            key={name}
-            path={`/${joinUrlPaths(microFrontendPath, path)}`}
-          />
-        ))}
-      </Suspense>
-    </>
+    <div>
+      <Sidebar basePath={microFrontendPath} />
+      <AppLayout>
+        <Typography color="primary" variant="h3">
+          Micro-Frontend {process.env.REACT_APP_MF_CODE}
+        </Typography>
+
+        <Suspense fallback="Loading Child">
+          {Object.entries(routes).map(([name, { factory, path, ...props }]) => (
+            <Route
+              {...props}
+              component={lazy(factory)}
+              key={name}
+              path={`/${joinUrlPaths(microFrontendPath, path)}`}
+            />
+          ))}
+        </Suspense>
+      </AppLayout>
+    </div>
   );
 
   return (
-    <Router history={history}>
-      <div>
-        {!isMicroFrontend && <h2>HEADER</h2>}
-        {content}
-      </div>
-    </Router>
+    <div className={classes.root}>
+      <StylesProvider generateClassName={generateClassName} jss={jssInstance}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Router history={history}>
+            <div>
+              <Header style={{ display: isMicroFrontend ? 'none' : 'flex' }} />
+              {content}
+            </div>
+          </Router>
+        </ThemeProvider>
+      </StylesProvider>
+    </div>
   );
 };
 
