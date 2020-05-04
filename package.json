@@ -15,6 +15,7 @@
     "@types/react-router": "^5.1.7",
     "@types/react-router-dom": "^5.1.5",
     "cb-react-micro-frontend": "^0.0.28",
+    "cb-react-scripts-micro-frontend-child": "^3.4.1-1",
     "clsx": "^1.1.0",
     "history": "^4.10.1",
     "jss": "^10.1.1",
@@ -24,7 +25,6 @@
     "react-hook-form": "^5.6.1",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
     "typescript": "^3.8.3"
   },
   "scripts": {
