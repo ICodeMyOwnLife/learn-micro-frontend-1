@@ -1,5 +1,5 @@
 import React, { FC, memo, Suspense, lazy } from 'react';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 import Header from 'components/Header';
 import { Typography } from '@material-ui/core';
 import AppLayout from 'components/AppLayout';
