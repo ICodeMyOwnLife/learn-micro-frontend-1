@@ -13,10 +13,6 @@ const routes = createRoutes({
     path: '/about',
     factory: () => import('containers/About'),
   },
-  Colors: {
-    path: '/colors',
-    factory: () => import('containers/Colors'),
-  },
   Login: {
     path: '/login',
     factory: () => import('containers/Login'),

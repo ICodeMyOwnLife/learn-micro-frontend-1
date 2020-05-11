@@ -1,27 +1,20 @@
 import React, { FC, memo } from 'react';
-import { MicroFrontendAppProps } from 'cb-react-micro-frontend';
-import { ThemeProvider, CssBaseline, StylesProvider } from '@material-ui/core';
-import theme from 'theme';
-import jssInstance, { generateClassName, sheetManager } from 'jssInstance';
+import {
+  MicroFrontendAppProps,
+  MicroFrontendChild,
+} from 'sp-ops-micro-frontend';
 import App from 'App';
 
 export const RootComponent: FC<MicroFrontendAppProps> = ({
   isMicroFrontend,
   microFrontendPath,
 }) => (
-  <StylesProvider
-    generateClassName={generateClassName}
-    jss={jssInstance}
-    sheetsManager={sheetManager}
-  >
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App
-        isMicroFrontend={isMicroFrontend}
-        microFrontendPath={microFrontendPath}
-      />
-    </ThemeProvider>
-  </StylesProvider>
+  <MicroFrontendChild isMicroFrontend={isMicroFrontend}>
+    <App
+      isMicroFrontend={isMicroFrontend}
+      microFrontendPath={microFrontendPath}
+    />
+  </MicroFrontendChild>
 );
 
 const Root = memo(RootComponent);

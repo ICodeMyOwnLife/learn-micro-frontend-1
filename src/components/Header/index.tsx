@@ -1,12 +1,6 @@
 import React, { FC, memo } from 'react';
 import { NavLink } from 'react-router-dom';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Link,
-  AppBarProps,
-} from '@material-ui/core';
+import { AppBar, Toolbar, Link, AppBarProps } from 'sp-ops-react-ui';
 import clsx from 'clsx';
 import useStyles from './styles';
 
@@ -24,11 +18,11 @@ export const HeaderComponent: FC<HeaderProps> = ({
       position={position}
     >
       <Toolbar>
-        <Typography className={classes.brand} variant="h6">
+        <h4 className={classes.brand}>
           <Link component={NavLink} to="/">
             Micro-Frontend {process.env.REACT_APP_MF_CODE}
           </Link>
-        </Typography>
+        </h4>
         <div className={classes.pad} />
         <nav className={classes.nav}>
           <Link color="secondary" component={NavLink} to="/login">

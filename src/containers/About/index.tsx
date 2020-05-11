@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { FC, memo, useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 import aboutTxtSrc from './about.txt';
 import aboutImgSrc from './about.png';
 import aboutVidSrc from './about.mp4';

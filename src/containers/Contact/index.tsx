@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 
 export const ContactComponent: FC<RouteComponentProps> = ({ location }) => (
   <div>

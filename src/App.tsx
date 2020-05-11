@@ -1,7 +1,6 @@
 import React, { FC, memo, Suspense, lazy } from 'react';
 import { Route } from 'react-router-dom';
 import Header from 'components/Header';
-import { Typography } from '@material-ui/core';
 import AppLayout from 'components/AppLayout';
 import Sidebar from 'components/Sidebar';
 import routes from 'routes';
@@ -20,9 +19,7 @@ export const AppComponent: FC<AppProps> = ({
         <Header style={{ display: isMicroFrontend ? 'none' : 'flex' }} />
         <Sidebar basePath={microFrontendPath} />
         <AppLayout>
-          <Typography color="primary" variant="h3">
-            Micro-Frontend {process.env.REACT_APP_MF_CODE}
-          </Typography>
+          <h3>Micro-Frontend {process.env.REACT_APP_MF_CODE}</h3>
 
           <Suspense fallback="Loading Child">
             {Object.entries(routes).map(

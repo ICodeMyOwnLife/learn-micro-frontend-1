@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
-import { Drawer, Toolbar, List, ListItem } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
+import { Drawer, Toolbar, List, ListItem } from 'sp-ops-react-ui';
 import routes from 'routes';
 import { joinUrlPaths } from 'utils/routing';
 import useStyles from './styles';
