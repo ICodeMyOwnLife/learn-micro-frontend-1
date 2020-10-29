@@ -6,7 +6,7 @@ import { datetime } from 'sp-datetime-utils';
 console.log(datetime);
 
 export const ContactComponent: FC<RouteComponentProps> = ({ location }) => {
-  const [time, setTime] = useState<datetime.Dayjs | null>(datetime());
+  const [time, setTime] = useState<datetime.Dayjs | null>(null);
 
   return (
     <div>
@@ -15,7 +15,11 @@ export const ContactComponent: FC<RouteComponentProps> = ({ location }) => {
 
       <form>
         <div>
-          <KeyboardDateTimePicker value={time} onChange={t => setTime(t)} />
+          <KeyboardDateTimePicker
+            format="DD/MM/YYYY HH:mm"
+            value={time}
+            onChange={t => setTime(t)}
+          />
 
           <Button
             color="primary"

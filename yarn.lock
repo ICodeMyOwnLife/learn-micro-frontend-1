@@ -3068,18 +3068,13 @@ cb-react-micro-frontend-core@^0.0.5:
   resolved "https://registry.yarnpkg.com/cb-react-micro-frontend-core/-/cb-react-micro-frontend-core-0.0.5.tgz#263b61c5c7b7a7121edcf4b96ba49aeba694f44c"
   integrity sha512-u3/4S98SBdHBvOmVibNSyrxAEThsd5sQ/Q04GJjzgNgA2pyA6poay9g9l8hlm5wutfSaR8+z+jE4L7UScOGWdQ==
 
-cb-react-micro-frontend@^0.0.35:
-  version "0.0.35"
-  resolved "https://registry.yarnpkg.com/cb-react-micro-frontend/-/cb-react-micro-frontend-0.0.35.tgz#204154d6fb88c9c7515fdf391bb1ad319292746f"
-  integrity sha512-OPy1XgYlEU9DPzD2+jgCphyAlrmyfJphcoRmCljP0z0SaOlTIfmMSbNcaR9bQ2co9Ubf8ON7g0oXOJnj4F6hug==
+cb-react-micro-frontend@^0.0.36:
+  version "0.0.36"
+  resolved "https://registry.yarnpkg.com/cb-react-micro-frontend/-/cb-react-micro-frontend-0.0.36.tgz#922e7d9c875e9f006d10e70eb8ab27b3fb823eb8"
+  integrity sha512-GA1+msxcnG0STgIFtp7m6Q2p8P1kRQ8N8CGgINDinDnwhauaBCK9oQVxvTw76mjTfvscJNU88e98LC1mQ3F6Yw==
   dependencies:
     cb-react-micro-frontend-core "^0.0.5"
-    cb-toolset "^0.1.2"
-
-cb-toolset@^0.1.2:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/cb-toolset/-/cb-toolset-0.1.4.tgz#39bb2a7f52c766723e47e5c71fec9943be86a802"
-  integrity sha512-Da9lzVy7HSAzPde052YIYybb/ZDb5NOcAEckODnn0u6u0rRw+/hZAVxpVTU7dajKzEXVVmi9vT6aag5d+JS40g==
+    cb-toolset "^0.2.0"
 
 cb-toolset@^0.2.0:
   version "0.2.0"
@@ -10316,15 +10311,17 @@ sp-datetime-utils@^0.1.0:
     "@date-io/dayjs" "1.x"
     dayjs "^1.8.27"
 
-"sp-ops-env@file:../../../apps/sp-ops-env":
+sp-ops-env@^0.0.1:
   version "0.0.1"
+  resolved "https://registry.yarnpkg.com/sp-ops-env/-/sp-ops-env-0.0.1.tgz#130e8202153b6765a5b0ab989d5b04e46c54c82e"
+  integrity sha512-MOq/Xp+uYl1osLzkyKJi+RKuNsrU0yOGzhXcKhXyGQciAuPZN8Bfs1VDC2g2wvIBlbAy3XMoFehPtksglhmrGA==
 
-sp-ops-micro-frontend@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/sp-ops-micro-frontend/-/sp-ops-micro-frontend-0.1.0.tgz#79da051db89d36ee328791d5eec19f9b30717984"
-  integrity sha512-zhmadA3tM1BWIysLoGbhpJoZ5apOr/PwHKWitObSSamZWoE+hurfTGLZPSxwQ+BNgRS9Q/qB7/jY4lCqzN/T2w==
+sp-ops-micro-frontend@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/sp-ops-micro-frontend/-/sp-ops-micro-frontend-0.1.1.tgz#5928c0cef7706ed021f542812dc1a91188d2022d"
+  integrity sha512-0F0lZejuQhuZmbk+bAd6Pb/r6JqFSqokhgGBYukPT0SMyqryUG4JIw6u/Mw7LmsPqENfAKOR/nf0Y2r8e/yBew==
   dependencies:
-    cb-react-micro-frontend "^0.0.35"
+    cb-react-micro-frontend "^0.0.36"
     cb-toolset "^0.2.0"
 
 sp-ops-react-ui@^0.2.1:
